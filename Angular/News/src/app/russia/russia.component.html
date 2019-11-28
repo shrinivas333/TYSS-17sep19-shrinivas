@@ -1,0 +1,10 @@
+<app-countries></app-countries>
+
+<div class="col-md-6 offset-3 card card-body mt-3">
+    <h1 style="text-align: center;"><b>Russia News</b></h1>
+<div class="card card-body" *ngFor="let russia of newsrussia">
+  
+    <img src="{{russia.urlToImage}}" alt="" style="height: 150px">
+    <p>{{russia.title}}</p>
+</div>
+</div>

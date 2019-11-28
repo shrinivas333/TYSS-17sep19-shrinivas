@@ -1,0 +1,11 @@
+<app-categories></app-categories>
+
+
+<div class="col-md-6 offset-3 card card-body mt-3">
+    <h1 style="text-align: center;"><b>Health News</b></h1>
+<div class="card card-body" *ngFor="let Health of  newshealth">
+  
+    <img src="{{Health.urlToImage}}" alt="" style="height: 150px">
+    <p>{{Health.title}}</p>
+</div>
+</div>

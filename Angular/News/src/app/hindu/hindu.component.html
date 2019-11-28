@@ -1,0 +1,6 @@
+<app-sources></app-sources>
+<h1 style="text-align: center;"><b>The Hindu News</b></h1>
+<div class="col-md-4 float-left card card-body mt-3" *ngFor="let hindu of  newshindu">
+    <img src="{{hindu.urlToImage}}" alt="" style="height: 150px">
+    <p>{{hindu.title}}</p>
+</div>

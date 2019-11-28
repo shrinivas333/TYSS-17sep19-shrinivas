@@ -1,0 +1,154 @@
+
+<form action="" class="col-md-4 offset-4 mt-5 mb-5 card card-body" #form="ngForm" (ngSubmit)="addreq(form)">
+    <h1 class="text-center bg-dark text-white">Add Requirement Form</h1>
+    <div class="form-group">
+        <input type="text" name="Company" id="Company" class="form-control" placeholder="Company Name" #company="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+      <select class="form-control" id="select" name="skills" #skills="ngModel" ngModel required>
+        <option disabled>Skills</option>
+        <option value="angular">Angular</option>
+        <option value="java">Java</option>
+         <option>Sql</option>
+        <option>JDBc</option> 
+      </select>
+    </div> 
+    <div class="form-group">
+        <input type="text" name="yearofexp" id="yearofexp" class="form-control" placeholder="year of Experience" #yearofexp="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+        <input type="text" name="ctc" id="ctc" class="form-control" placeholder="CTC" #ctc="ngModel" ngModel required>
+    </div>
+    
+    <div class="form-group">
+        <input type="text" name="loc" id="loc" class="form-control" placeholder="Location" #loc="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid" >Addreq</button>
+    </div>
+  </form>
+<!-- form for schedule -->
+
+
+
+<form action="" class="col-md-4 offset-4 mt-5 mb-5 card card-body" #form2="ngForm" (ngSubmit)="scheduleInterview(form2)">
+    <h1 class="text-center bg-dark text-white">schedule Interview Form</h1>
+    <div class="form-group">
+        <input type="text" name="cname" id="cname" class="form-control" placeholder="Candidate Name" #candname="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+        <input type="number" name="yearofExper" id="yearofExper" class="form-control" placeholder="year of Experience" #yearofExper="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+      <select class="form-control" name="skills" #skills="ngModel" ngModel required>
+        <option value="">Select</option>
+        <option >Angular</option>
+        <option>Java</option>
+         <option>Sql</option>
+        <option>JDBc</option>
+      </select>
+    </div>
+    <div class="form-group">
+        <input type="number" name="Ctc" id="Ctc" class="form-control" placeholder="year of Experience" #Ctc="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+        <input type="number" name="Ectc" id="Ectc" class="form-control" placeholder="CTC" #Ectc="ngModel" ngModel required>
+    </div>
+    
+    <div class="form-group">
+        <input type="text" name="Rloc" id="Rloc" class="form-control" placeholder="Ready to Relocate" #Rloc="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-success float-right" [disabled]="form2.invalid" >scheduleInterview</button>
+    </div>
+  </form>
+
+
+
+
+<!-- form add user -->
+
+
+
+<form action="" class="col-md-4 offset-4 mt-5 mb-5 card card-body" #form3="ngForm" (ngSubmit)="AddUser(form3)">
+    <h1 class="text-center bg-dark text-white">Add User Form</h1>
+    <div class="form-group">
+        <input type="text" name="username" id="username" class="form-control" placeholder="User Name" #username="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+        <input type="number" name="userage" id="userage" class="form-control" placeholder="user Age" #userage="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+      <select class="form-control" name="skills" #skills="ngModel" ngModel required>
+        <option value="">Select</option>
+        <option >Angular</option>
+        <option>Java</option>
+         <option>Sql</option>
+        <option>JDBc</option>
+      </select>
+     
+    
+    </div>
+    <div class="form-group">
+        <input type="email" name="useremail" id="useremail" class="form-control" placeholder="User Email" #useremail="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+        <input type="tel" name="userphone" id="userphone" class="form-control" placeholder="User Contact No" #userphone="ngModel" ngModel required>
+    </div>
+    
+    <div class="form-group">
+        <input type="password" name="password" id="password" class="form-control" placeholder="Enter a password" #password="ngModel" ngModel required>
+    </div>
+    
+    <div class="form-group">
+        <input type="cpassword" name="cpassword" id="cpassword" class="form-control" placeholder="Re-type password" #password1="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-success float-right" [disabled]="form3.invalid" >AddUser</button>
+    </div>
+  </form>
+
+
+
+
+<!-- form add Product -->
+
+
+
+<form action="" class="col-md-4 offset-4 mt-5 mb-5 card card-body" #form4="ngForm" (ngSubmit)="AddProduct(form4)">
+    <h1 class="text-center bg-dark text-white">Add product Form</h1>
+    <div class="form-group">
+        <input type="text" name="productname" id="productname" class="form-control" placeholder="Product Name" #productname="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+        <input type="number" name="Productprice" id="Productprice" class="form-control" placeholder="Product price" #productprice="ngModel" ngModel required>
+    </div>
+    
+    <div class="form-group">
+        <input type="text" name="Productdesc" id="Productdesc" class="form-control" placeholder="Product description " row="3" #Productdesc="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+        <input type="url" name="imgurl" id="imgurl" class="form-control" placeholder="product Image Url" #imgurl="ngModel" ngModel required>
+    </div>
+    
+   
+    
+   
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-success float-right" [disabled]="form4.invalid" >AddProduct</button>
+    </div>
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

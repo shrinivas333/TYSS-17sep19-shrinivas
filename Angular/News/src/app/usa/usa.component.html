@@ -1,0 +1,10 @@
+<app-countries></app-countries>
+
+
+<h1 style="text-align: center;"><b>USA News</b></h1>
+<div class="col-md-4 float-left card card-body mt-3"  *ngFor="let usa of newsusa">
+    
+  
+    <img src="{{usa.urlToImage}}" alt="" style="height: 150px">
+    <p>{{usa.title}}</p>
+</div>

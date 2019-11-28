@@ -1,0 +1,90 @@
+<form action="" class="col-md-4 offset-4 mt-5 card card-body" #form="ngForm" (ngSubmit)="LoginData(form)">
+        <h1 class="text-center bg-dark text-white">Register Form</h1>
+    <div class="form-group">
+        <input type="email" name="email" id="email" class="form-control" placeholder="Enter a email..." #email="ngModel" ngModel required>
+        <div *ngIf="email.touched && email.invalid">
+            <p *ngIf="email.errors.required" class="alert alert-danger">*This field is required</p>
+        </div>
+    </div>
+    <div class="form-group">
+            <input type="password" name="password" id="password" class="form-control" placeholder="Enter a password..." #password="ngModel" ngModel required minlength="6">
+            <div *ngIf="password.touched && password.invalid">
+            <p *ngIf="password.errors.required" class="alert alert-danger">*This field is required</p>
+            <p *ngIf="password.errors.minlength" class="alert alert-danger">*minimum 6 charcter8c 8</p> 
+        </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid" >Register</button>
+        </div>
+
+</form>
+
+<table class="tabble table-bordered table-striped table-dark col-md-8 offset-2 mt-4">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Date</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.email | uppercase}}</td>
+            <td>{{user.password | dollar}}</td>
+            <td>{{today | date}}</td>
+           <td> <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="selectuser(user)">
+        Edit
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" *ngIf="selecteduser">
+                    <form action="" class="" #form="ngForm" (ngSubmit)= "updatedata(form)">
+                            <h1 class="text-center bg-dark text-white">Register Form</h1>
+                        <input type="hidden" name="id" #id="ngModel" NgModel [(ngModel)]="selecteduser.id">
+                            <div class="form-group">
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Enter a email..." #email="ngModel" ngModel required [(ngModel)]="selecteduser.email">
+                            <div *ngIf="email.touched && email.invalid">
+                                <p *ngIf="email.errors.required" class="alert alert-danger">*This field is required</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Enter a password..." #password="ngModel" ngModel required minlength="6" [(ngModel)]="selecteduser.password">
+                                <div *ngIf="password.touched && password.invalid">
+                                <p *ngIf="password.errors.required" class="alert alert-danger">*This field is required</p>
+                                <p *ngIf="password.errors.minlength" class="alert alert-danger">*minimum 6 charcter8c 8</p> 
+                            </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid" >update</button>
+                            </div>
+                    
+                    </form>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </td>
+            <td>
+                <button type="button" (click)="deletedata(user)"  class="btn btn-outline-danger">Delete</button>
+            </td>
+          
+        </tr>
+    </tbody>
+
+</table>

@@ -1,0 +1,7 @@
+<app-sources></app-sources>
+<h1 style="text-align: center;"><b>FOX News</b></h1>
+<div class="col-md-3 float-left card card-body mt-3" *ngFor="let fox of  newsfox">
+  
+    <img src="{{fox.urlToImage}}" alt="" style="height: 150px">
+    <p>{{fox.title}}</p>
+</div>

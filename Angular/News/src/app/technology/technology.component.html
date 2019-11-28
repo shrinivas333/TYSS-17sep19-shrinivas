@@ -1,0 +1,10 @@
+<app-categories></app-categories>
+
+<h1 style="text-align: center;"><b>Technology News</b></h1>
+<div class="col-md-3 float-left card card-body mt-3" *ngFor="let technology of  newstechnology">
+
+  
+    <img src="{{technology.urlToImage}}" alt="" style="height: 150px">
+    <p>{{technology.title}}</p>
+</div>
+

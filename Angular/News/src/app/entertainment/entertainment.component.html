@@ -1,0 +1,11 @@
+<app-categories></app-categories>
+
+
+<div class="col-md-6 offset-3 card card-body mt-3">
+    <h1 style="text-align: center;"><b>Entertainment News</b></h1>
+<div class="card card-body" *ngFor="let entertainment of  newsentertainment">
+  
+    <img src="{{entertainment.urlToImage}}" alt="" style="height: 150px">
+    <p>{{entertainment.title}}</p>
+</div>
+</div>

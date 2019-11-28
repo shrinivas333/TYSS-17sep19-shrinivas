@@ -1,0 +1,10 @@
+<app-countries></app-countries>
+
+<div class="col-md-6 offset-3 card card-body mt-3">
+    <h1 style="text-align: center;"><b>India News</b></h1>
+<div class="card card-body" *ngFor="let indianews of  newsindia">
+  
+    <img src="{{indianews.urlToImage}}" alt="" style="height: 150px">
+    <p>{{indianews.title}}</p>
+</div>
+</div>
