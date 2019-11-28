@@ -1,0 +1,10 @@
+package com.testyantra.didemo.util;
+
+import com.testyantra.didemo.dao.I;
+
+public class Manger {
+
+	public I getI() {
+		return new A();
+	}
+}

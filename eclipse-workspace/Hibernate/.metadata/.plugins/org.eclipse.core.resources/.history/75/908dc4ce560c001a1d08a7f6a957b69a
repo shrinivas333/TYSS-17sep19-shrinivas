@@ -1,0 +1,5 @@
+package com.tyss.jpawithhibernate.onetoone;
+
+public class VoterCard {
+
+}

@@ -1,0 +1,56 @@
+package com.testyantra.assestmangement.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.testyantra.assestmangement.dto.UserInfo;
+
+
+
+public class UserDAOJdbcImpl implements UserDAO {
+
+	private final String URL="jdbc:mysql://localhost:3306/assetmanagement?user=root&password=root";
+	private static final String DRIVER_CLASS_NAME="com.mysql.jdbc.Driver";
+	private static final String SELECT_QUERY="select * from user_master where id=?";
+	@Override
+	public UserInfo auth(int id, String password, String usertype) {
+			
+		try {
+			
+			Class.forName(DRIVER_CLASS_NAME);
+			
+			try(Connection conn=DriverManager.getConnection(URL);
+				PreparedStatement pstmt=conn.prepareStatement(SELECT_QUERY);){
+				
+				pstmt.setInt(1, id);
+				
+			try(ResultSet rs=pstmt.executeQuery()){
+				
+				if(rs.next()) {
+					
+					UserInfo info=new UserInfo();
+					info.setUserid(rs.getInt("id"));
+					info.setUserName(rs.getString("name"));
+					info.setUsertype(rs.getString("usertype"));
+					info.setPassword(rs.getString("password"));
+					
+					return info;
+				}else {
+					return null;
+				}
+			}
+				
+				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}//end of try-catch block
+		
+		
+		
+	}
+
+}

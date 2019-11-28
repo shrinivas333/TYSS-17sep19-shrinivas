@@ -1,0 +1,23 @@
+package com.tyss.jpawithhibernate;
+
+import com.tyss.jpawithhibernate.manytomany.Courses;
+
+public class TestManyToMany {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Courses c=new Courses();
+		c.setCid(1);
+		c.setCname("Ravi");
+		
+		Courses c1=new Courses();
+		c1.setCid(2);
+		c1.setCname("Ram");
+		
+		Courses c2=new Courses();
+		c2.setCid(3);
+		c2.setCname("Raju");
+	}
+
+}

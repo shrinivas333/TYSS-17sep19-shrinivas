@@ -1,0 +1,49 @@
+<%@page import="com.testyantra.empwebapp.dto.EmployeeInfo"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+table,tr,th,td{
+border: solid 1px black;
+border-collapse: collapse;
+}
+
+</style>
+
+</head>
+<%
+EmployeeInfo info=(EmployeeInfo)request.getAttribute("info");
+
+
+%>
+<body>
+<a href='./home'>Home</a>
+<a href='./logout' style='float:right'>Logout</a>
+<%if(info!=null){ %>	
+<fieldset>
+<legend>Employee Info</legend>
+
+	<table align='center' style="border: solid 1px black">
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+			<th>EMAIL</th>
+		</tr>
+		<tr>
+			<td><%=info.getId()%></td>
+			<td><%=info.getName()%></td>
+			<td><%=info.getEmial()%></td>
+			
+		</tr>
+	</table>
+</fieldset>
+<%}else{ %>
+
+<h1>No DATA FOUND!!!</h1>
+<%} %>
+</body>
+</html>

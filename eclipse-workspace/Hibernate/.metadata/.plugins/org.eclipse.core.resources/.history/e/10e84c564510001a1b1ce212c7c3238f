@@ -1,0 +1,27 @@
+package com.tyss.springcore.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+
+import com.tyss.springcore.di.Animal;
+import com.tyss.springcore.di.Dog;
+import com.tyss.springcore.di.Hello;
+
+@Configuration
+public class ConfigurationClass {
+
+	@Bean(name = "hello")
+	@Scope("prototype")
+	public Hello  getHello() {
+		Hello hello=new Hello();
+		hello.setMsg("I Love Python");
+		
+		return hello;
+		
+	}
+	@Bean(name="dog")
+	public Dog getDog() {
+		return new Dog();
+	}
+}

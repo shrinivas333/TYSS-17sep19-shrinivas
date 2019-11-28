@@ -1,0 +1,10 @@
+package com.testyantra.assestmangement.dao;
+
+import com.testyantra.assestmangement.dto.UserInfo;
+;
+
+public interface UserDAO {
+	
+	public UserInfo auth(int id,String password,String usertype);
+
+}

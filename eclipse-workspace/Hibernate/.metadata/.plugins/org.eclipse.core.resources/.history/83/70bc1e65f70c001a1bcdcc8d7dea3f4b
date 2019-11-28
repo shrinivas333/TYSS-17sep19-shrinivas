@@ -1,0 +1,5 @@
+package com.tyss.jpawithhibernate.manytoone;
+
+public class PencilBox {
+
+}
