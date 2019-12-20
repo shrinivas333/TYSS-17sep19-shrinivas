@@ -1,0 +1,61 @@
+<div class="col-md-6 offset-2 mt-5">
+    <div *ngIf="message">{{message}}</div>
+    <form #form="ngForm" (ngSubmit)="addproducts(form)">
+        <div class="card">
+            <div class="card-header">
+                <h5>Add Product</h5>
+            </div>
+            <div class="card-body">
+                   
+                <div class="form-group">
+                    <label for="productname">Product Name</label>
+                    <input type="text" name="name" id="name" class="form-control"
+                        placeholder="Enter product Name...." #name="ngModel" ngModel required>
+                        <div *ngIf="name.touched && name.invalid">
+                            <p class="alert alert-danger" *ngIf="name.errors.required">*Enter a product name</p>
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <label for=category>Category</label>
+                    <input type="text" name="category" id="category" class="form-control"
+                        placeholder="Enter category of product...." #category="ngModel" ngModel
+                        required>
+                    <div *ngIf="category.touched && category.invalid">
+                        <p class="alert alert-danger" *ngIf="category.errors.required">*please enter a category</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" name="company" id="company" class="form-control"
+                        placeholder="Enter Company name...." #company="ngModel" ngModel required>
+                    <div *ngIf="company.touched && company.invalid">
+                        <p class="alert alert-danger" *ngIf="company.errors.required">*This Field is required
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">quantity</label>
+                    <input type="number" name="quantity" id="quantity" class="form-control"
+                        placeholder="Enter quantity...." #quantity="ngModel" ngModel required>
+                    <div *ngIf="quantity.touched && quantity.invalid">
+                        <p class="alert alert-danger" *ngIf="quantity.errors.required">*This Field is required</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="text" name="price" id="price" class="form-control" placeholder="Enter a price...."
+                        #price="ngModel" ngModel   required>
+                    <div *ngIf="price.touched && price.invalid">
+                        <p class="alert alert-danger" *ngIf="price.errors.required">*This Field is required</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid">Submit</button>
+            </div>
+        </div>
+    </form>        
+</div>
+
